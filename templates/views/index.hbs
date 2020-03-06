@@ -5,27 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy"
     content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
-    <style>
-      body {
-        color: #333333;
-        font-family: arial;
-        max-width: 650px;
-        margin: 0;
-        padding : 0 16px;
-      }
-    </style>
+  <style>
+    body {
+      color: #333333;
+      font-family: arial;
+      margin: 0;
+      padding: 0 16px;
+    }
+  </style>
   <title>{{title}}</title>
 </head>
 
-<body>
+<body style="text-align: center;">
   {{>header}}
 
-  <h1>Home Page</h1>
+  <h2 style="color: green;">Weather App</h2>
+  <br/>
+  <br/>
+  <p style="color: red;">{{error}}</p>
+
+  <form action="/">
+    <label for="address">Enter an address: </label>
+    <input type="text" id="address" name="address" placeholder="Enter an address here...">
+    <input type="submit" value="Submit">
+  </form>
+
+  <p>{{loc}}</p>
+  <p>{{forecast}}</p>
   <p>{{address}}</p>
 
-
-
-   {{>footer}}
+  {{>footer}}
 </body>
 
 </html>
